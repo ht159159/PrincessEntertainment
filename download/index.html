@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<script>
+if(window.location.search.indexOf("v=")<1){
+     window.location.search="v="+Math.random();
+}
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Download</title>
+    <style type="text/css">
+        body,
+        html {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        img {
+            /* 真实宽度 */
+            max-width: 750px;
+            width: 750px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="image/bg.jpg?1" usemap="#useMap" />
+    <map name="useMap">
+        <area id="ios" shape="rect" coords="61,1158,344,1243" />
+        <area id="android" shape="rect" coords="61,1158,344,1243" />
+        <area id="play" shape="rect" coords="400,1160,684,1243" />
+    </map>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jqueryMap.js"></script>
+    <script>
+        var u = navigator.userAgent,
+            isApp = u.toLocaleLowerCase().indexOf("html5plus") > -1,
+            isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+            isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+            isWechat = u.toLocaleLowerCase().indexOf("micromessenger") > -1;
+        $(document).ready(function (e) {
+
+            if (isAndroid) {
+                $("#ios").remove();
+            }
+            if (isIOS) {
+                $("#android").remove();
+            }
+
+            $('img[usemap]').rwdImageMaps();
+            $('img[usemap]').css({ width: "100%" });
+            $("img").show();
+
+            $("#ios").click(function () {
+                window.location.href = "itms-services://?action=download-manifest&url=https://live.vncasinolive.com/download/download.plist"
+            })
+
+            $("#android").click(function () {
+                window.location.href = "https://live.vncasinolive.com/download/CasioLive_0719164820.apk";
+            })
+
+            $("#play").click(function () {
+                window.location.href = "https://live.vncasinolive.com";
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  color: rgb(214, 214, 214);
+}
+div::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: #ffffff;
+  background: none;
+}
+.grade {
+  background: linear-gradient(to right, #18cfff, #0db0f2, #018ce4);
+  background: -moz-linear-gradient(to right, #18cfff, #0db0f2, #018ce4);
+  background: -o-linear-gradient(to right, #18cfff, #0db0f2, #018ce4);
+  background: -webkit-linear-gradient(to right, #18cfff, #0db0f2, #018ce4);
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* 适配PC和IPAD横屏 */
+@media only screen and (min-width: 1024px){
+  /* 主页，登录页，VIP详情说明适配 */
+  #app,
+  .bg,
+  .vipDetail {
+      max-width: 500px ;
+      margin: 0 auto;
+   }
+   /* 筛选，主屏按钮，跑马灯，主页引导详情适配 */
+  .filter,
+  .finacial,
+  .marquee-detail,
+  .shortcutExplanation {
+    max-width: 500px ;
+    margin: 0 auto;
+    left: unset !important;
+   }
+   /* 下方导航适配 */
+ .nav {
+    width: 500px;
+    margin: 0 auto;
+    left: unset;
+   }
+ 
+   /* 左右过场动画屏蔽 */
+  .Slide-horizontal-enter-active, 
+  .Slide-horizontal-enter, 
+  .R-Slide-horizontal-leave-active, 
+  .R-Slide-horizontal-leave-to {
+    width: 500px !important;
+    margin: 0 auto;
+    transition: unset !important;
+    left: 100% !important;
+   }
+   /* 垂直过场动画屏蔽 */
+ .Slide-vertical-enter-active,
+ .Slide-vertical-enter,
+ .R-Slide-vertical-leave-active,
+ .R-Slide-vertical-leave-to {
+    width: 500px !important;
+    margin: 0 auto;  
+   }
+   
+}
+
+
+/* 竖屏底下的查询 */
+@media screen and (orientation: portrait) {
+  body {
+    /* 防止页面被刘海遮住 */
+    padding-top: constant(safe-area-inset-top);
+  }
+}
+/* 横屏底下的查询 */
+@media screen and (orientation: landscape) {
+  body {
+    /* IOS 11支持*/
+    padding-right: constant(safe-area-inset-right);
+    padding-left: constant(safe-area-inset-left);
+    /*IOS 11.2版本版本支持*/
+    padding-right: env(safe-area-inset-right);
+    padding-left: env(safe-area-inset-left);
+  }
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* custom */
+a {
+  color: #7e8c8d;
+  text-decoration: none;
+  -webkit-backface-visibility: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 5px;
+  background-color: rgba(125, 125, 125, 0.7);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 5px;
+  background-color: rgba(125, 125, 125, 0.7);
+  border-radius: 6px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  text-size-adjust: none;
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*显示省略号*/
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

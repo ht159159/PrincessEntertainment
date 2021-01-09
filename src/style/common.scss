@@ -1,0 +1,443 @@
+@import './variable.scss';
+
+@import './transition.scss';
+.container {
+  padding: 0 rem(54);
+  width: 100%;
+  box-sizing: border-box;
+}
+// 禁止點擊
+.dontClick {
+  pointer-events: none;
+}
+// input的樣式
+.input_box {
+  width: 100%;
+  margin-bottom: rem(55);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $light-gray;
+  font-size: rem(32);
+  position: relative;
+  &:nth-last-child(2) {
+    margin-bottom: rem(80);
+  }
+  .alert {
+    position: absolute;
+    left: 0;
+    top: rem(-20);
+    font-size: rem(26);
+    color: $red;
+  }
+  input {
+    background-color: transparent;
+    padding: rem(15) 0;
+    width: 100%;
+    outline: none;
+    color: #fff;
+  }
+  a,
+  > span {
+    display: block;
+    width: rem(40);
+    height: rem(32);
+    margin-right: rem(5);
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    // 清除
+    &.clear {
+      background-image: url('~@/assets/images/icons/input_close.png');
+    }
+    // 隱藏密碼
+    &.hide {
+      background-image: url('~@/assets/images/icons/input_hide.png');
+    }
+    // 密碼顯現
+    &.show {
+      background-image: url('~@/assets/images/icons/input_show.png');
+    }
+    // 發送簡訊驗證碼
+    &.confirm {
+      font-weight: normal;
+      color: $light-gray;
+      width: auto;
+      white-space: nowrap;
+      padding: rem(15) 0;
+    }
+    &.border{
+      border: 1px solid #9499af;
+      padding: rem(5);
+    }
+    &.imgcode {
+      width: rem(150);
+      height: 100%;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  // filter input樣式
+  .datetime-input {
+    text-align: center;
+  }
+}
+
+// 按鈕的樣式
+.btn {
+  display: block;
+  width: 100%;
+  font-size: rem(32);
+  padding: rem(24) 0;
+  color: $white;
+  text-align: center;
+  &:active {
+    filter: brightness(0.6);
+  }
+  &-blue {
+    background: linear-gradient(to right, #18cffe, #0fb4f4, #018ee5);
+  }
+  &-red {
+    background-color: $dark-red;
+  }
+  &-round {
+    border-radius: rem(50);
+  }
+ &-coffee{
+    background: linear-gradient(
+      to right,
+      #d1b16c 0%,
+      #d1b16c 0.4%,
+      #bd9e5c 100%
+    );
+  }
+}
+
+// 選單(個人資料)
+.menu {
+  padding-top: rem(39);
+  .list {
+    background-color: $dark;
+    display: flex;
+    justify-content: space-between;
+    padding: rem(48) rem(50);
+    align-items: center;
+    font-size: rem(29);
+    &-clickable {
+      &:active {
+        background-color: #3e4057;
+      }
+    }
+    &:not(:nth-child(1)) {
+      border-top: 1px solid $bg-primary;
+    }
+    .left {
+      display: flex;
+      align-items: center;
+
+      .text {
+        color: $light;
+      }
+      .icon {
+        width: rem(40);
+        height: rem(32);
+        padding-right: rem(33);
+        img {
+          margin: 0 auto;
+          display: block;
+          height: 100%;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      .disable {
+        pointer-events: none;
+        color: $dark-gray;
+        .datepicker {
+          color: #5d5d65 !important;
+        }
+        .datepicker::placeholder {
+          color: $dark-gray;
+        }
+      }
+      .datepicker::placeholder {
+        color: $light;
+      }
+      input {
+        text-align: right;
+        color: $light;
+        padding-right: rem(24);
+        background-color: transparent;
+        outline: none;
+      }
+      input {
+        &[readonly],
+        &::placeholder,
+        &:disabled {
+          color: $dark-gray;
+        }
+      }
+      .text {
+        color: $dark-gray;
+        padding-right: rem(24);
+        &-blue {
+          color: $btn-primary;
+        }
+      }
+      .icon {
+        width: rem(15);
+        height: rem(24);
+        background-image: url(~@/assets/images/icons/next.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.menu {
+  padding-top: rem(39);
+  .list {
+    background-color: $dark;
+    display: flex;
+    justify-content: space-between;
+    padding: rem(48) rem(50);
+    align-items: center;
+    font-size: rem(29);
+    &:not(:nth-child(1)) {
+      border-top: 1px solid $bg-primary;
+    }
+    &-l {
+      display: flex;
+      align-items: center;
+
+      &-text {
+        color: $light;
+      }
+      &-icon {
+        width: rem(40);
+        height: rem(32);
+        padding-right: rem(33);
+        img {
+          margin: 0 auto;
+          display: block;
+          height: 100%;
+        }
+      }
+    }
+    &-r {
+      display: flex;
+      align-items: center;
+      &-disable {
+        pointer-events: none;
+        color: $dark-gray;
+        .datepicker {
+          color: #5d5d65 !important;
+        }
+        .datepicker::placeholder {
+          color: $dark-gray;
+        }
+      }
+      .datepicker::placeholder {
+        color: $light;
+      }
+      input {
+        text-align: right;
+        color: $light;
+        padding-right: rem(24);
+        background-color: transparent;
+        outline: none;
+      }
+      input {
+        &[readonly],
+        &::placeholder,
+        &:disabled {
+          color: $dark-gray;
+        }
+      }
+      &-text {
+        color: $dark-gray;
+        padding-right: rem(24);
+        &-blue {
+          color: $btn-primary;
+        }
+      }
+      &-icon {
+        width: rem(15);
+        height: rem(24);
+        background-image: url(~@/assets/images/icons/next.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.vdatetime-popup {
+  background: $bg-primary;
+  &__header {
+    background-color: $dark;
+  }
+}
+
+.cardinfo {
+  width: 100%;
+  background-image: linear-gradient(135deg, #a83439 20%, #b6455d 90%);
+  height: rem(220);
+  border-radius: rem(15);
+  margin-bottom: rem(30);
+  .row {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: rem(30);
+
+    .bankcardLogo {
+      font-size: rem(48);
+      margin-top: rem(-5);
+    }
+    p {
+      font-size: rem(28);
+      color: rgb(248, 247, 247);
+    }
+    h3 {
+      font-size: rem(32);
+      color: rgb(248, 247, 247);
+      margin: 0 auto;
+      padding-top: rem(40);
+    }
+  }
+}
+
+.mint-loadmore-text {
+  font-size: rem(24);
+}
+.mint-indicator-wrapper {
+  z-index: 999;
+}
+.noData {
+  font-size: rem(40);
+  width: 100%;
+  margin: rem(30) auto;
+  text-align: center;
+}
+
+$green: #01bc06;
+.recordPage {
+  height: 100%;
+  overflow: hidden;
+  .nav-bar {
+    margin-top: rem(23);
+    width: 100%;
+    height: rem(61);
+    display: flex;
+    font-size: rem(32);
+    text-align: center;
+    background: #000220;
+    position: sticky;
+    z-index: 99;
+    top: rem(130);
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    left: 0;
+    .nav {
+      width: 100%;
+      line-height: rem(61);
+      white-space: nowrap;
+      display: block;
+      padding: 0 rem(10);
+    }
+  }
+  .container {
+    &.recordBox {
+      height: calc(100% - #{rem(180)});
+    }
+    .box {
+      width: 100%;
+      height: rem(257);
+      font-size: rem(33);
+      background: #1b1b26;
+      border-radius: 10px;
+      color: #9a9aa2;
+      padding-top: rem(20);
+      margin-top: rem(33);
+      margin-bottom: rem(33);
+      .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .time {
+          font-size: rem(25);
+          color: #6c6c77;
+        }
+      }
+      .flex:nth-child(1) {
+        margin-bottom: rem(15);
+      }
+      .flex:nth-child(3) {
+        margin-top: rem(50);
+        .status {
+          font-size: rem(30);
+          color: #ebb866;
+          position: relative;
+          &.result {
+            color: $green;
+          }
+          &.result:after {
+            background: $green;
+          }
+        }
+        .status:after {
+          content: '';
+          width: rem(20);
+          height: rem(20);
+          background: #ebb866;
+          position: absolute;
+          left: rem(-45);
+          border-radius: 50%;
+          top: 35%;
+          transform: translateY(-25%);
+        }
+        .amount {
+          img {
+            width: rem(35);
+          }
+          span {
+            font-size: rem(50);
+            margin-left: rem(30);
+            font-weight: 100;
+            color: #d0d1d4;
+          }
+        }
+      }
+      p {
+        font-size: rem(25);
+        color: #6c6c77;
+      }
+    }
+  }
+  .active {
+    color: #04a7d8;
+    position: relative;
+  }
+  .active:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -50%;
+    width: 100%;
+    transform: translateX(50%);
+    height: rem(20);
+    background: radial-gradient(
+      at 50% 100%,
+      #04a7d8,
+      rgba(112, 220, 255, 0.3),
+      rgba(255, 116, 225, 0) 50%
+    );
+  }
+}

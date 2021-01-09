@@ -1,0 +1,28 @@
+@import './functions.scss';
+@import './mixins.scss';
+/* 共用變數 */
+$primary: #20212f;
+$dark: #1b1b28;
+$light: #dfdfdf;
+$white: #fff;
+$blue: #0f89bb;
+$light-blue: #5d7ca4;
+
+$gray: #818181;
+$dark-gray: #5d5d65;
+$light-gray: #9499af;
+$red: #ff0000;
+$dark-red: #940203;
+// 背景顏色
+$bg-primary: $primary;
+$bg-dark: $dark;
+
+//  按鈕顏色
+$btn-primary: #008ae3;
+// 文字顏色
+$font-alert: $red;
+
+// modalbox色票
+$modalbox-bg: #222c53;
+$modalbox-btn-default: #1d264a;
+$modalbox-btn-bright: #2b396d;

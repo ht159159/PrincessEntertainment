@@ -1,0 +1,88 @@
+.popup-enter-active,
+.popup-leave-active {
+  transition: opacity 0.5s;
+}
+.popup-enter,
+.popup-leave-to {
+  opacity: 0;
+}
+
+.Slide-horizontal-enter-active {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  transition: 0.4s;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  background: #1f212e;
+}
+.Slide-horizontal-enter {
+  left: 100%;
+  bottom: 0;
+}
+.Slide-horizontal-leave-active {
+  transition: 0.3s;
+}
+
+.R-Slide-horizontal-leave-active {
+  transition: left 0.4s;
+  left: 0;
+  background: #1f212e;
+  width: 100%;
+  z-index: 9999;
+}
+.R-Slide-horizontal-leave-to {
+  position: fixed;
+  z-index: 9999;
+  left: 100%;
+  height: 100%;
+}
+.R-Slide-horizontal-enter-active {
+  opacity: 0;
+  transition: opacity 0.01s;
+}
+
+
+// 彈出
+.pop-enter-active {
+  transition: 0.3s;
+  transform: scale(1);
+}
+
+.pop-enter {
+  transform: scale(0);
+}
+
+.pop-leave-active {
+  transition: 0.3s;
+  transform: scale(0);
+}
+.pop-leave {
+  transform: scale(1);
+}
+
+// 垂直滑入滑出
+.Slide-vertical-enter-active {
+  position: fixed;
+  width: 100%;
+  transition: 0.4s;
+  z-index: 9999;
+  top: 0%;
+}
+.Slide-vertical-enter {
+  top: -100%;
+}
+.Slide-vertical-leave-active {
+  transition: 0.3s;
+}
+.R-Slide-vertical-leave-active {
+  transition: 0.3s;
+  top: 0%;
+}
+.R-Slide-vertical-leave-to {
+  position: fixed;
+  z-index: 9999;
+  top: -100%;
+  width: 100%;
+}

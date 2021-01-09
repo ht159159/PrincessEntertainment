@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover" />
+  <link rel="manifest" href="manifest.json?v=5">
+  <!--for IOS-->
+  <meta name="format-detection" content="telephone=no email=no" />
+  <meta name="apple-touch-fullscreen" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <link rel="icon" href="/favicon.ico?v=GZYL" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/resources/icons/Icon-App-57.png?v=GZYL" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/resources/icons/Icon-App-72.png?v=GZYL" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/resources/icons/Icon-App-114.png?v=GZYL" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/resources/icons/Icon-App-144.png?v=GZYL" />
+  <!-- 设置启动画面 -->
+  <link rel="apple-touch-startup-image" href="/resources/icons/background-920-1280.jpg?v=GZYL" />
+  <link rel="apple-touch-startup-image" media="screen and (orientation: portrait)" href="/resources/icons/background-920-1280.jpg?v=GZYL" /> <!--竖-->
+  <link rel="apple-touch-startup-image" media="screen and (orientation: landscape)" href="/resources/icons/background-920-1280.jpg?v=GZYL" /> <!--横-->
+  <title>公主娛樂</title>
+  <script src="/config.js?20200629"></script>
+  <script src="/eruda.js"></script>
+  <script>
+    //eruda.init();
+    var v;
+    var u = navigator.userAgent,
+	  isWebApp = window.navigator.standalone,
+	  isLine = u.toLocaleLowerCase().indexOf("Line") > -1,
+    isApp = u.toLocaleLowerCase().indexOf("html5plus") > -1,
+	  isMac = u.toLocaleLowerCase().indexOf("Macintosh") > -1,
+	  isWin = u.toLocaleLowerCase().indexOf("Windows") > -1,
+    isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+    isAndroid = u.indexOf('android') > -1 || u.indexOf('linux') > -1,
+    isWechat = u.toLocaleLowerCase().indexOf("micromessenger") > -1;
+   
+    // rem布局
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt =
+          'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750 && clientWidth < 1024) {
+            docEl.style.fontSize =  '80px';
+          } else if (clientWidth >= 1024)  {
+            docEl.style.fontSize = 100 * (500 / 750) + 'px';
+          }else{
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+
+    //判斷是否是麻將好友邀請鏈結
+    let url = location.href;
+    console.log(url)
+    if(url.indexOf('friendsRoom')!=-1)
+    {
+      let ary = url.split('?')[1].split('&');
+      for(let i = 0; i <= ary.length-1; i++)
+        {
+          sessionStorage.setItem("boxid",ary[0].split('=')[1]);
+          sessionStorage.setItem("gid",ary[1].split('=')[1]);
+        }
+    }else{
+      sessionStorage.clear();
+    }
+  </script>
+</head>
+
+<body ontouchstart="">
+  <noscript>
+    <strong>We're sorry but jb doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+</body>
+</html>
